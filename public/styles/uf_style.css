@@ -1,5 +1,7 @@
 @import url(//fonts.googleapis.com/css?family=Montserrat:400|Muli:300,400|Inconsolata);
 @import url(//fonts.googleapis.com/css?family=Montserrat:400,700|Muli:400,500|Inconsolata);
+@import url("https://use.fontawesome.com/releases/v5.6.3/css/all.css");
+
 @media all {
     .featherlight {
         display: none;
@@ -174,7 +176,10 @@ dfn {
     font-style: italic
 }
 
-
+mark {
+    background: #FFFF27;
+    color: #333
+}
 
 sub,
 sup {
@@ -901,11 +906,29 @@ input[type="submit"] {
     margin: 2px 0 -2px 0
 }
 
+body {
+    background: #fff;
+    color: #555;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+a {
+    color: #1694CA
+}
+
+a:hover {
+    color: #0e6185
+}
 
 pre {
     position: relative
 }
 
+.bg {
+    background: #fff;
+    border: 1px solid #eaeaea
+}
 
 b,
 strong,
@@ -1076,6 +1099,32 @@ select[multiple=multiple]:focus {
     }
 }
 
+#sidebar {
+    background-color: #38424D;
+    position: fixed;
+    top: 0;
+    width: 300px;
+    bottom: 0;
+    left: 0;
+    font-weight: 500;
+    font-size: 15px
+}
+
+#sidebar a {
+    color: #bbb
+}
+
+#sidebar a:hover {
+    color: #d5d5d5
+}
+
+#sidebar a.subtitle {
+    color: rgba(187, 187, 187, .6)
+}
+
+#sidebar hr {
+    border-bottom: 1px solid #323a44
+}
 
 #sidebar a.padding {
     padding: 0 1rem
@@ -1093,6 +1142,28 @@ select[multiple=multiple]:focus {
     margin-right: 0;
     padding-left: 1rem;
     padding-right: 1rem
+}
+
+#sidebar h5 i {
+    color: rgba(187, 187, 187, .6);
+    position: absolute;
+    right: .6rem;
+    top: .7rem;
+    font-size: 80%
+}
+
+#sidebar h5.parent a {
+    background: #293038;
+    color: #c8c8c8!important
+}
+
+#sidebar h5.active a {
+    background: #fff;
+    color: #555!important
+}
+
+#sidebar h5.active i {
+    color: #555!important
 }
 
 #sidebar h5+ul.topics {
@@ -1203,6 +1274,15 @@ select[multiple=multiple]:focus {
 
 #sidebar ul.topics>li>a .fa {
     margin-top: 9px
+}
+
+#sidebar ul.topics>li.parent,
+#sidebar ul.topics>li.active {
+    background: #2d353e;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding-left: 1rem;
+    padding-right: 1rem
 }
 
 #sidebar ul li.active>a {
@@ -1497,7 +1577,17 @@ blockquote>blockquote>blockquote p:first-child:after {
     content: 'Info'
 }
 
+blockquote>blockquote>blockquote>p {
+    margin-left: -71px;
+    border-top: 30px solid #F0B37E;
+    background: #FFF2DB
+}
 
+blockquote>blockquote>blockquote>blockquote>p {
+    margin-left: -94px;
+    border-top: 30px solid rgba(217, 83, 79, .8);
+    background: #FAE2E2
+}
 
 blockquote>blockquote>blockquote>blockquote>p:first-child:after {
     content: 'Warning'
@@ -1530,7 +1620,12 @@ samp {
     font-family: "Inconsolata", monospace
 }
 
-
+code {
+    background: #f9f2f4;
+    color: #9c1d3d;
+    padding: .2rem .4rem;
+    border-radius: 3px
+}
 
 pre {
     padding: 1rem;
@@ -1542,7 +1637,11 @@ pre {
     font-size: 1rem
 }
 
-
+pre code {
+    color: #237794;
+    background: inherit;
+    font-size: 1rem
+}
 
 hr {
     border-bottom: 4px solid #F0F2F4
@@ -1569,6 +1668,9 @@ hr {
     background-color: rgba(255, 255, 255, .3)
 }
 
+.scrollbar-inner>.scroll-element .scroll-bar {
+    background-color: #b5d1eb
+}
 
 .scrollbar-inner>.scroll-element:hover .scroll-bar {
     background-color: #ccc
@@ -2140,7 +2242,7 @@ td {
 }
 
 .copy-to-clipboard {
-    background-image: url(//images/clippy.svg);
+    background-image: url("/images/clippy.svg");
     background-position: 50% 50%;
     background-size: 16px 16px;
     background-repeat: no-repeat;
@@ -2180,7 +2282,13 @@ pre .copy-to-clipboard:hover {
     transform-style: preserve-3d
 }
 
-
+nav.custom {
+    background-color: #ee6e73;
+    width: 100%;
+    height: 56px;
+    line-height: 56px;
+    display: block
+}
 
 nav.custom .nav-wrapper {
     position: relative;
@@ -2443,7 +2551,17 @@ nav.custom .dropdown-content li>a>i {
     }
 }
 
-
+@media (min-width:1018px) {
+    #sidebar {
+        padding-top: 18px
+    }
+    #header {
+        background-color: #38424d!important
+    }
+    #mobile-nav {
+        display: none
+    }
+}
 
 nav.custom a:hover {
     cursor: pointer
@@ -2510,7 +2628,11 @@ a {
     padding-bottom: 1px
 }
 
-
+#body-inner a:hover,
+#body-inner a:hover code {
+    color: #1d625c;
+    border-bottom: 2px solid #28cdbf
+}
 
 a:hover {
     color: #f56c68
@@ -2541,7 +2663,12 @@ a.nav-prev:hover {
     padding: 22px 16px 12px 16px
 }
 
-
+.toc h1 {
+    margin-bottom: 1rem;
+    text-align: left;
+    font-size: 2rem;
+    border-bottom: 2px solid #38424d
+}
 
 .toc ol {
     list-style-type: none;
@@ -2591,13 +2718,18 @@ a.nav-prev:hover {
     top: 1px
 }
 
+#header {
+    background-color: #ee6e73
+}
 
 #logo {
     line-height: normal;
     display: table
 }
 
-
+#sidebar ul li.visited>a .read-icon {
+    color: #ee6e73
+}
 
 .logo-title {
     color: #fff;
@@ -2695,6 +2827,27 @@ h1 {
     padding-bottom: 3px
 }
 
+h2 {
+    font-size: 2rem;
+    border-bottom: 2px solid #ee6e73;
+    display: table
+}
+
+h3 {
+    font-size: 1.5rem;
+    border-bottom: 2px solid #f77e83;
+    display: table-cell
+}
+
+h4,
+h5,
+h6 {
+    color: #333;
+    border-bottom: .5px solid #ffbfca;
+    display: table;
+    padding-bottom: 3px;
+    padding-left: 1.34rem
+}
 
 h4 {
     font-size: 1.33rem
@@ -2751,7 +2904,17 @@ pre {
     box-shadow: 0 0 11px 0 hsla(0, 0%, 71%, .04)
 }
 
+code {
+    background-color: rgba(206, 239, 239, .44);
+    color: #062938;
+    border-radius: 0
+}
 
+pre code {
+    color: #3a3e3d;
+    background: none;
+    font-size: 16.5px
+}
 
 .copy-to-clipboard {
     background-color: #e7f2f9;
@@ -2767,9 +2930,33 @@ pre {
     background-color: #cce3ec
 }
 
+blockquote code,
+blockquote .copy-to-clipboard {
+    background-color: rgba(129, 136, 142, .13)
+}
 
+blockquote p {
+    color: #555;
+    padding-left: .5rem
+}
 
+blockquote {
+    border-left: 10px solid #e5e6e6
+}
 
+blockquote>blockquote>p,
+blockquote>blockquote>blockquote>p,
+blockquote>blockquote>blockquote>blockquote>p,
+blockquote>blockquote>blockquote>blockquote>blockquote>p,
+blockquote>blockquote>blockquote>blockquote>blockquote>blockquote>p {
+    border-top: 30px solid #6AB0DE;
+    background: #E7F2FA
+}
+
+blockquote>blockquote>blockquote>blockquote>p {
+    border-top: 30px solid #F0B37E;
+    background: #FFF2DB
+}
 
 blockquote p:first-child:after,
 blockquote>blockquote p:first-child:after,
@@ -2988,8 +3175,8 @@ input.form-control {
 
 @font-face {
     font-family: 'FontAwesome';
-    src: url(/fonts/fontawesome-webfont.eot);
-    src: url('/fonts/fontawesome-webfont.eot?#iefix&v=4.3.0') format('embedded-opentype'), url(/fonts/fontawesome-webfont.woff2) format('woff2'), url(/fonts/fontawesome-webfont.woff) format('woff'), url(/fonts/fontawesome-webfont.ttf) format('truetype'), url('/fonts/fontawesome-webfont.svg#fontawesomeregular') format('svg');
+    src: url("/fonts/fontawesome-webfont.eot?v=4.3.0");
+    src: url('/fonts/fontawesome-webfont.eot?#iefix&v=4.3.0') format('embedded-opentype'), url(/fonts/fontawesome-webfont.woff2) format('woff2'), url("/fonts/fontawesome-webfont.woff") format('woff'), url("/fonts/fontawesome-webfont.ttf") format('truetype'), url('/fonts/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular') format('svg');
     font-weight: 400;
     font-style: normal
 }
