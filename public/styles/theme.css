@@ -33,7 +33,7 @@ mark {
 body {
   background: #fff;
   color: #555;
-  font-size: 1.35rem;
+  /*font-size: 1.35rem;*/
   line-height: 1.7;
   text-align: justify;
 }
@@ -205,3 +205,4 @@ blockquote>blockquote>blockquote>blockquote>p {
 nav.custom ul li a:hover {
   background-color: #7E685D
 }
+/**/

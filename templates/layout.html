@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title> GS template {{#meta.title}}{{meta.title}} - {{/meta.title}}{{config.site.title}}</title>
+  <title> {{#meta.title}}{{meta.title}} - {{/meta.title}}{{config.site.title}}</title>
   {{#meta.metadata.description}}
   <meta name="description" content="{{meta.metadata.description}}" />{{/meta.metadata.description}}
   {{#meta.metadata.refresh}}
@@ -35,15 +35,14 @@
 <body class="searchbox-hidden">
   <div id="fb-root"></div>
   <script async defer crossorigin="anonymous"
-    src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v10.0&appId=156811091033253&autoLogAppEvents=1"
-    nonce="mJ0CLUlq"></script>
-
+    src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v6.0&appId=156811091033253&autoLogAppEvents=1">
+    </script>
   <div class="wrapper">
     <div class="navbar-fixed" id="nav-main">
       <nav class="custom">
         <div class="nav-wrapper" style="background-color: #52372A;">
           <a href="{{config.base_url}}/" class="brand-logo"
-            style="padding-left: 2rem; text-transform: uppercase;font-size: 1.4em;">{{config.site.title}}</a>
+            style="padding-left: 2rem; text-transform: uppercase; font-size:1.4em;">{{config.site.title}}</a>
           <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
           <ul class="right hide-on-med-and-down" id="headerLinks">
             {{#config.externalLinks}}
@@ -84,11 +83,13 @@
       </nav>
     </div>
 
-    <nav id="sidebar" style="background-color:#8A5E3B; color: #fff;">
-      <div id="header-wrapper">
-        <div id="header" style="background-color:#8A5E3B !important;;">
-          <a id="logo" href="#"><span class="logo-title" style="font-size: 1.4em;"> {{config.site.title}}</span>
+    <nav id="sidebar" style="padding-top:0px;">
+      <div id="header-wrapper"  style="padding-top: 18px; background-color: #A87A4E !important;">
+        <div id="header" style="padding-top: 18px;background-color: #A87A4E !important;">
+          <a id="logo" href="#"><span class="logo-title" style="font-size:1.4em;">
+              {{config.site.title}}</span>
           </a>
+          <div style="height:18px;"></div>
           <form class="searchbox" action="{{config.base_url}}/">
             <label for="search-by"><i class="fa fa-search"></i></label>
             <input type="search" search name="search" id="search" value="{{search}}"
@@ -99,6 +100,7 @@
             {{#config.social.facebook}}
             <a href="{{config.social.facebook}}" target="_blank">Facebook</a>
             {{/config.social.facebook}}
+
             {{#config.social.github}}
             <a href="{{config.social.github}}" target="_blank">Github</a>
             {{/config.social.github}}
@@ -106,6 +108,7 @@
             <a href="{{config.social.youtube}}" target="_blank">Youtube</a>
             {{/config.social.youtube}}
           </div>
+
         </div>
       </div>
 
@@ -219,29 +222,29 @@
             {{^breadCrumbs}}
             <br>
             {{/breadCrumbs}}
-            
             <a class="fb-share-c" target="_blank"
               href="https://www.facebook.com/sharer/sharer.php?u={{{url}}}&amp;src=sdkpreparse"
               style="text-decoration: none; float:right;">
               <i class="a-icon fa fa-share"></i>Share
             </a>
-            {{#Toc}}
-            <div class="toc">
-              <ol data-toc="body" data-toc-headings="h2, h3"></ol>
-            </div>
-            {{/Toc}}
           </div>
-          {{{yield}}}
-
-
+          {{#Toc}}
+          <div class="toc">
+            <ol data-toc="body" data-toc-headings="h2, h3"></ol>
+          </div>
+          {{/Toc}}
         </div>
-        <div id="navigation">
-          {{#navSlugs.prev}}<a class="nav nav-prev" href={{navSlugs.prev}}> <i
-              class="fa fa-chevron-left"></i></a>{{/navSlugs.prev}}
+        {{{yield}}}
 
-          {{#navSlugs.next}}<a class="nav nav-next" href={{navSlugs.next}}><i
-              class="fa fa-chevron-right"></i></a>{{/navSlugs.next}}
-        </div>
+
+      </div>
+      <div id="navigation">
+        {{#navSlugs.prev}}<a class="nav nav-prev" href={{navSlugs.prev}}> <i
+            class="fa fa-chevron-left"></i></a>{{/navSlugs.prev}}
+
+        {{#navSlugs.next}}<a class="nav nav-next" href={{navSlugs.next}}><i
+            class="fa fa-chevron-right"></i></a>{{/navSlugs.next}}
+      </div>
 
     </section>
 
@@ -313,8 +316,6 @@
 
   <script type="text/javascript">
     $(document).ready(function () {
-      alert(config)
-      // $('.fb-share-c').attr('href', 'hrf..')
       $('#sidebarCollapse').on('click', function () {
         $('#sidebar').toggleClass('active');
         $('body').toggleClass('sidebar-hidden');
